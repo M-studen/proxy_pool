@@ -152,6 +152,35 @@ class ProxyFetcher(object):
             r.text)
         for proxy in proxies:
             yield ':'.join(proxy)
+    @staticmethod
+    def freeProxy11():
+        """蜜蜂代理"""
+        r=WebRequest().get("https://www.beesproxy.com/free",timeout=10)
+        proxies=re.findall(
+            r'<td.*?>[\s\S]*?(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})[\s\S]*?</td>[\s\S]*?<td.*?>[\s\S]*?(\d+)[\s\S]*?</td>',
+            r.text
+        )
+        for proxy in proxies:
+            yield ':'.join(proxy)
+    @staticmethod
+    def freeProxy12():
+        """toolbaba免费ip代理"""
+        r=WebRequest().get("https://www.toolbaba.cn/ip",timeout=10)
+        proxies=re.findall(
+            r'<td.*?>[\s\S]*?(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})[\s\S]*?</td>[\s\S]*?<td.*?>[\s\S]*?(\d+)[\s\S]*?</td>',
+            r.text
+        )
+        for proxy in proxies:
+            yield ':'.join(proxy)
+    @staticmethod
+    def freeProxy13():
+        """自动刷新代理池高可用全球代理"""
+        r=webRequest().get("https://ip.jiangxianli.com",timeout=10)
+        proxies=re.findall(
+            r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})[\s\S]*?[\s\S]*?(\d+)[\s\S]*?',r.text
+            )
+        for proxy in proxies:
+            yield str(':'.join(proxy))
 
     # @staticmethod
     # def wallProxy01():
