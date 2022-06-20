@@ -1,0 +1,1 @@
+redis-server /usr/local/redis/redis.conf

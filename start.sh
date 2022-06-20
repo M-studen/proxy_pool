@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-python proxyPool.py server &
-python proxyPool.py schedule
+python3 /Users/xiaomai/Desktop/proxy_pool/proxyPool.py server &
+python3 /Users/xiaomai/Desktop/proxy_pool/proxyPool.py schedule
